@@ -1,0 +1,12 @@
+clear all
+clean all
+
+% loading data from chi2fit.csv and choosing column 2 and 3 - the ones
+% that have the necessary y and f values
+data = csvread('chi2fit.csv');
+yValues = data(:,2);
+fValues = data(:,3);
+
+% calculate a new matrix by element-wise calcs; then sum over
+deltaY = 5
+chi2 = sum(((yValues - fValues)/deltaY).^2)
